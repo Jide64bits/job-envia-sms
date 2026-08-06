@@ -73,7 +73,7 @@ def main():
 
         responsavel,paciente,data_agendada,hora_agendada,telefone = agendamento
 
-        telefone = '51991960433'
+       # telefone = '51991960433'
 
         mensagem = (
             f"Olá, {responsavel}!\n\n"
@@ -83,7 +83,7 @@ def main():
             f"Lembramos que *cancelamentos no dia e faltas sem aviso prévio são cobrados normalmente*.\n\n"
             f"Obrigado!"
         )
- ##       enviar_whatsapp(telefone, mensagem)
+        enviar_whatsapp(telefone, mensagem)
 
 
    ## Manda mensagem sobre o agendamento
@@ -115,7 +115,7 @@ def main():
 
             responsavel,nome_paciente,quantidade_consultas,datas,valor_total,telefone,mes_ano_referencia = paciente
 
-            telefone = '51991960433'
+       #     telefone = '51991960433'
 
             mensagem = (
                 f"Olá, tudo bem {responsavel}?\n\n"
@@ -128,9 +128,9 @@ def main():
             )
             enviar_whatsapp(telefone, mensagem)
 
-            telefone = '51991960468'
+           # telefone = '51991960468'
             
-            enviar_whatsapp(telefone, mensagem)
+          #  enviar_whatsapp(telefone, mensagem)
     
     except Exception as e:
         print(f"Erro ao processar dados: {e}")

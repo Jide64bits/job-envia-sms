@@ -129,9 +129,7 @@ def main():
             enviar_whatsapp(telefone, mensagem)
 
            # telefone = '51991960468'
-            
-          #  enviar_whatsapp(telefone, mensagem)
-    
+                
     except Exception as e:
         print(f"Erro ao processar dados: {e}")
 

@@ -11,16 +11,7 @@ from utils.envs import Envs as envs
 
 
 def conectar_db():
-   # return psycopg2.connect(envs.DB_URL)
-
-    return psycopg2.connect(
-        dbname="bd-consultorio",
-        user="cacique",
-        password="Im$|3TP)ey}h~LNq",
-        host="34.72.86.88",  # ou o IP do servidor
-        port="5432" ,
-        options="-c idle_in_transaction_session_timeout=0"       # porta padrão do PostgreSQL
-    )
+    return psycopg2.connect(envs.DB_URL, options="-c idle_in_transaction_session_timeout=0")
 
 
 
@@ -133,4 +124,6 @@ def main():
     except Exception as e:
         print(f"Erro ao processar dados: {e}")
 
-main()
+
+if __name__ == "__main__":
+    main()

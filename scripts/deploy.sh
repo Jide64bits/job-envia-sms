@@ -25,10 +25,15 @@ gcloud services enable \
   secretmanager.googleapis.com \
   --project="$PROJECT_ID"
 
-gcloud artifacts repositories create jobs \
-  --repository-format=docker \
-  --location="$REGION" \
-  --project="$PROJECT_ID" >/dev/null 2>&1 || echo "Repositório de artefatos já existe."
+if ! gcloud artifacts repositories describe jobs --location="$REGION" --project="$PROJECT_ID" >/dev/null 2>&1; then
+  echo "Criando repositório de artefatos 'jobs'..."
+  gcloud artifacts repositories create jobs \
+    --repository-format=docker \
+    --location="$REGION" \
+    --project="$PROJECT_ID"
+else
+  echo "Repositório de artefatos 'jobs' já existe."
+fi
 
 IMAGE="${REGION}-docker.pkg.dev/${PROJECT_ID}/jobs/${JOB_NAME}:latest"
 gcloud builds submit \

@@ -52,7 +52,7 @@ def main():
                         , patients p 
             where a.user_id = '91f8088b-ddef-4c68-9da2-aa990316511b'
             and p.id = a.patient_id 
-            and (a.date::text || ' ' || a.time)::timestamp between now() and now() + interval '10 day' 
+            and (a.date::text || ' ' || a.time)::timestamp between now() and now() + interval '2 day' 
                       """
     cursor.execute(query)
 

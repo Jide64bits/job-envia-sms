@@ -41,7 +41,6 @@ def main():
 
     conexao = conectar_db() 
     
-
     cursor = conexao.cursor()
 
     ## Manda mensagem sobre o agendamento

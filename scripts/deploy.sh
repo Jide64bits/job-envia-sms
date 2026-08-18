@@ -31,7 +31,10 @@ gcloud artifacts repositories create jobs \
   --project="$PROJECT_ID" >/dev/null 2>&1 || echo "Repositório de artefatos já existe."
 
 IMAGE="${REGION}-docker.pkg.dev/${PROJECT_ID}/jobs/${JOB_NAME}:latest"
-gcloud builds submit --tag "$IMAGE" --project="$PROJECT_ID"
+gcloud builds submit \
+  --config=cloudbuild.yaml \
+  --substitutions="_REGION=$REGION,_JOB_NAME=$JOB_NAME" \
+  --project="$PROJECT_ID"
 
 PROJECT_NUMBER=$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')
 if [[ -z "$SERVICE_ACCOUNT" ]]; then

@@ -16,7 +16,7 @@ def conectar_db():
         user=envs.DB_USER,
         password=envs.DB_PASSWORD,
         dbname=envs.DB_NAME,
-        port=envs.DB_PORT,
+        port=int(envs.DB_PORT),
         options="-c idle_in_transaction_session_timeout=0",
     )
 

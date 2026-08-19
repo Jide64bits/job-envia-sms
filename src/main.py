@@ -11,7 +11,14 @@ from utils.envs import Envs as envs
 
 
 def conectar_db():
-    return psycopg2.connect(envs.DB_URL, options="-c idle_in_transaction_session_timeout=0")
+    return psycopg2.connect(
+        host=envs.DB_HOST,
+        user=envs.DB_USER,
+        password=envs.DB_PASSWORD,
+        dbname=envs.DB_NAME,
+        port=envs.DB_PORT,
+        options="-c idle_in_transaction_session_timeout=0",
+    )
 
 
 

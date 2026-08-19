@@ -63,7 +63,7 @@ def main():
 
         responsavel,paciente,data_agendada,hora_agendada,telefone = agendamento
 
-       # telefone = '51991960433'
+        telefone = '51991960468'
 
         mensagem = (
             f"Olá, {responsavel}!\n\n"
@@ -105,7 +105,7 @@ def main():
 
             responsavel,nome_paciente,quantidade_consultas,datas,valor_total,telefone,mes_ano_referencia = paciente
 
-       #     telefone = '51991960433'
+            telefone = '51991960468'
 
             mensagem = (
                 f"Olá, tudo bem {responsavel}?\n\n"

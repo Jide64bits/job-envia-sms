@@ -60,7 +60,7 @@ def main():
                         , patients p 
             where a.user_id = '91f8088b-ddef-4c68-9da2-aa990316511b'
             and p.id = a.patient_id 
-            and (a.date::text || ' ' || a.time)::timestamp between now() and now() + interval '5 day' 
+            and (a.date::text || ' ' || a.time)::timestamp between now() and now() + interval '2 day' 
                       """
     cursor.execute(query)
 
@@ -71,7 +71,7 @@ def main():
 
         responsavel,paciente,data_agendada,hora_agendada,telefone = agendamento
 
-        telefone = '51991960468'
+   #     telefone = '51991960468'
 
         mensagem = (
             f"Olá, {responsavel}!\n\n"
@@ -113,7 +113,7 @@ def main():
 
             responsavel,nome_paciente,quantidade_consultas,datas,valor_total,telefone,mes_ano_referencia = paciente
 
-            telefone = '51991960468'
+      #      telefone = '51991960468'
 
             mensagem = (
                 f"Olá, tudo bem {responsavel}?\n\n"

@@ -24,6 +24,7 @@ def conectar_db():
 
 def enviar_whatsapp(telefone, mensagem):
     telefone = re.sub(r'\D', '', telefone)
+    
     if not telefone.startswith('55'):
         telefone = '55' + telefone
 

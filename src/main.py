@@ -99,6 +99,7 @@ def main():
                     WHERE s.user_id = '91f8088b-ddef-4c68-9da2-aa990316511b'
                       AND s.paid = false
                       and extract(day from current_date) = 1
+                      and 1=2
                     GROUP BY p.responsible_name
                            , p.name
                            , p.phone
@@ -124,7 +125,7 @@ def main():
                 f"*Chave Pix:* 58.020.384/0001-94\n\n"
                 f"Após o pagamento, solicitamos o envio do comprovante. Em caso de atraso, poderão ser cobrados juros, conforme previsto em contrato."
             )
-            enviar_whatsapp(telefone, mensagem)
+       #     enviar_whatsapp(telefone, mensagem)
 
            # telefone = '51991960468'
                 
